@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block slider %}
+<div class="banner-area banner-area--contact all-text-white text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-title">CONTACT US</h1>
+                <ul class="fund-breadcumb">
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="/contact-us">Contact Us</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block section_body %}
+{% include './contact-body.html' %}
+{% endblock %}

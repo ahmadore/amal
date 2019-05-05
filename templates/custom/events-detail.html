@@ -1,0 +1,63 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block slider %}
+<div class="banner-area banner-area--events all-text-white text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-title">Events</h1>
+                <ul class="fund-breadcumb">
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="/events/">Events</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block section_body %}
+<div class="main-content section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="event-detial-wrap">
+                    <div class="image-wrap mb40">
+                        <img src="{{event.display_image.url}}" class="img-round" alt="">
+                    </div>
+                    <h3 class="pdb10">{{event.title}}</h3>
+                    <p>{{event.description}}</p>
+                    <ul class="event-detail-meta nv-color">
+                        <li>
+                            <span class="event-detail-meta__title"><i class="fa fa-calendar base-color icon"></i> Event Schedule</span>
+                            <span class="desc">{{event.date|date:"M d, Y h:i A"}}</span>
+                        </li>
+                        <li>
+                            <span class="event-detail-meta__title"><i class="fa fa-map-marker base-color icon"></i> Location</span>
+                            <span class="desc">{{event.place}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="event-details-counter-wrap mt50 mb30">
+                    <div class="event-counter">
+                        <div id="event-counter-four" class="musica-counter-active" data-value-year="{{event.year}}" data-value-month="{{event.month}}" data-value-day="{{event.day}}" data-value-zone="+10"></div>
+                    </div>
+                    <div class="buy-ticket all-text-white">
+                        <a href="#" class="btn base-bg">Buy Ticket</a>
+                        <div class="pdt15">or Donate Only</div>
+                    </div>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="blog-details-navigation mt25 pdb30">
+<!--                    <a href="#" class="previous-post">Previous Post</a>-->
+                    <a href="/events/" class="next-post pull-right">Back to Events</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

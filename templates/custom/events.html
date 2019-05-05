@@ -1,0 +1,63 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block slider %}
+<div class="banner-area banner-area--events all-text-white text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-title">Events</h1>
+                <ul class="fund-breadcumb">
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="events.html">Events</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block section_body %}
+<div class="main-content section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="fund-events">
+                    {% for event in events %}
+                    <div class="fund-event">
+                        <div class="fund-event__date">
+                            <span class="fund-event__day base-color">{{event.date|date:"d"}}</span>
+                            <span class="small-text nv-color">{{event.date|date:"M-Y"}}</span>
+                        </div>
+                        <div class="fund-event__main">
+                            <div class="fund-event__image-content">
+                                <div class="fund-event__image-wrap">
+                                    <img src="{{event.display_image.url}}" class="fund-event__image" alt="" style="max-height:155px;">
+                                </div>
+                                <div class="fund-event__text-content">
+                                    <h4 class="fund-event__title"><a href="/events/{{event.id}}">{{event.title}}</a></h4>
+                                    <div class="fund-event__time">
+                                        <i class="fa fa-calendar fund-event__icon base-color"></i>{{event.date|date:"M d, Y h:i A"}}
+                                    </div>
+                                    <div class="fund-event__address">
+                                        <i class="fa fa-map-marker fund-event__icon base-color"></i>{{event.place}}
+                                    </div>
+                                </div>
+                            </div>
+                            <p>{{event.description|truncatechars:300}}</p>
+                        </div>
+                    </div>
+                    <!--/.fund-event-->
+                    {% endfor %}
+
+                </div>
+<!--                <div class="fund-pagination mb30">-->
+<!--                    <a href="#" class="active">1</a>-->
+<!--                    <a href="#">2</a>-->
+<!--                    <a href="#" class="next">Next</a>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

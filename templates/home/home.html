@@ -1,0 +1,163 @@
+{% extends '../home-base.html' %}
+{% load static %}
+
+{% block content %}
+<!--Our Causes-->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading text-center">
+                    <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">Our <span class="base-color">CAUSES</span> </h2>
+                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">GIVE YOUR SHARE TO SHOW YOU CARE</span>
+                    <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
+                </div>
+            </div>
+        </div>
+        {% for cause in causes %}
+        <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="our-causes wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".6s">
+            <div class="our-causes__image-wrap">
+                <img src="{{cause.image.url}}" class="our-causes__image" alt="">
+            </div>
+            <div class="our-causes__text-content text-center">
+                <h4 class="text-uppercase our-causes__title"><a href="#">{{cause.title}}</a></h4>
+                <p class="text-left">{{cause.description|truncatechars:300}}</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+        <!--/.our-causes-->
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!--Sources of Funding-->
+<section class="help-us-section section-padding all-text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading text-center">
+                    <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">Sources of <span class="base-color">Income</span></h2>
+                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                    <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <div class="help-us wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
+                    <div class="help-us__icon-wrap">
+                        <i class="help-us__icon fa fa-users"></i>
+                    </div>
+                    <div class="help-us__text-content">
+                        <h4 class="help-us__title heading-label-four">Members Contribution</h4>
+                        <p>Click on Read More to find out about how to become a member..</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="help-us wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".4s">
+                    <div class="help-us__icon-wrap">
+                        <i class="help-us__icon fa fa-money"></i>
+                    </div>
+                    <div class="help-us__text-content">
+                        <h4 class="help-us__title heading-label-four">Fund Raising</h4>
+                        <p>You can join an active Fund Raising Campaign to contribute your quoter...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="help-us wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".6s">
+                    <div class="help-us__icon-wrap">
+                        <i class="help-us__icon fa fa-child"></i>
+                    </div>
+                    <div class="help-us__text-content">
+                        <h4 class="help-us__title heading-label-four">Donations</h4>
+                        <p>You can donate to a cause by clicking on the Donate Button...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Upcoming Events-->
+<section class="upcomming-event-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="section-heading">
+                    <h2 class="section-title section-title--small wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">UPCOMING  <span class="base-color">EVENTS</span></h2>
+                    <div class="section-heading-separator section-heading-separator--left-align wow fadeInUpXsd" data-wow-duration=".9s" data-wow-delay=".1s"></div>
+                </div>
+
+                <div class="upcommig-event-carousel wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".3s">
+                    {% for event in events %}
+                    <div class="upcomming-event">
+                        <div class="upcomming-event__image-wrap">
+                            <img src="{{event.display_image.url}}" class="upcomming-event__image" alt="event">
+                            <div class="upcomming-event__date" style="font-size:0.95em;">
+                                <i class="fa fa-calendar"></i>
+                                <span>{{event.date|date}}</span>
+                            </div>
+                        </div>
+                        <div class="upcomming-event__text-content">
+                            <h4 class="upcomming-event__title"><a href="#">{{ event.title }}</a></h4>
+                            <div class="upcomming-event__meta-info">
+                                <span class="upcomming-event__time"><i class="fa fa-clock-o base-color"></i>{{event.date|time}}  </span>
+                                <span class="upcomming-event__place"><i class="fa fa-map-marker base-color"></i>{{ event.place }}</span>
+                            </div>
+                            <p>{{event.description}}</p>
+                        </div>
+                    </div>
+                    <!--/.upcomming-event-->
+                    {% endfor %}
+                </div>
+            </div>
+<!--            <div class="col-md-5"></div>-->
+        </div>
+    </div>
+</section>
+
+<!--Board of trustees-->
+<section class="testimonial-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading text-center">
+                    <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">BOARD OF <span class="base-color">TRUSTEES</span></h2>
+                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                    <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fund-testimonial-carousel wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".3s">
+                    {% for member in trustees %}
+                    <div class="fund-testimonial">
+                        <div class="fund-testimonial__quote base-bg">
+                            {{ member.bios }}
+                        </div>
+                        <div class="fund-testimonial__author">
+                            <div class="fund-testimonial__author-image">
+                                <img src="{{member.profile_picture.url}}" alt="">
+                            </div>
+                            <div class="fund-testimonial__author-text">
+                                <h4 class="fund-testimonial__author-name">{{member.name}}</h4>
+                                <span class="fund-testimonial__designation">{{member.position}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
