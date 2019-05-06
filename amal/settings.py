@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/home/ubuntu/al-amal/amal/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join('/home/ahmadore/Documents/projects/amal', 'static')
 ]
 
 MEDIA_URL = '/media/'
