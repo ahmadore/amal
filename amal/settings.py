@@ -133,10 +133,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/ubuntu/al-amal/amal/static/'
+STATIC_ROOT = '/home/ubuntu/al-amal/static/'
 
 STATICFILES_DIRS = [
-    os.path.join('/home/ahmadore/Documents/projects/amal', 'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
 MEDIA_URL = '/media/'
