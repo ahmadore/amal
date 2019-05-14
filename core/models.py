@@ -58,3 +58,13 @@ class Trustee(models.Model):
 
     def __str__(self):
         return '%s - %s' %(self.name, self.position)
+
+
+class ManagementStaff(models.Model):
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    profile_picture = models.ImageField(upload_to='trustees')
+    bios = models.TextField()
+
+    def __str__(self):
+        return '%s - %s' %(self.name, self.position)

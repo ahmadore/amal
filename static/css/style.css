@@ -189,6 +189,11 @@ img {
   color: #fff;
 }
 
+.all-text-white-home {
+  color: #fff;
+  text-shadow: 1px 0px 1px rgba(10, 170, 160, 0.69);
+}
+
 .all-text-white .btn {
   color: #fff;
   border-color: #cccccc;
@@ -3533,11 +3538,11 @@ hr {
 }
 
 .banner-area--events {
-  background-image: url("../images/events/event-banner.jpg");
+  background-image: url("../images/custom/widows.jpg");
 }
 
 .banner-area--causes {
-  background-image: url("../images/causes/banner.jpg");
+  background-image: url("../images/custom/bac1.jpg");
 }
 
 .banner-area--contact {

@@ -18,12 +18,14 @@
         <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="our-causes wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".6s">
             <div class="our-causes__image-wrap">
-                <img src="{{cause.image.url}}" class="our-causes__image" alt="">
+                <img src="{{cause.image.url}}" class="our-causes__image" alt="" style="border: 1px solid #0003;border-top-right-radius: 8px;border-top-left-radius: 8px;">
             </div>
-            <div class="our-causes__text-content text-center">
-                <h4 class="text-uppercase our-causes__title"><a href="#">{{cause.title}}</a></h4>
-                <p class="text-left">{{cause.description|truncatechars:300}}</p>
-                <a href="#" class="btn">Read More</a>
+            <div class="our-causes__text-content text-center" style="min-height: 280px;display: flex;flex-direction: column;">
+                <h4 class="text-uppercase our-causes__title"><a href="/causes/{{cause.id}}">{{cause.title}}</a></h4>
+                <p class="text-left" style="margin-bottom:auto;">{{cause.description|truncatechars:200}}</p>
+                <div>
+                    <a href="/causes/{{cause.id}}" class="btn">Read More</a>
+                </div>
             </div>
         </div>
         <!--/.our-causes-->
@@ -39,7 +41,7 @@
             <div class="col-md-12">
                 <div class="section-heading text-center">
                     <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">Sources of <span class="base-color">Income</span></h2>
-                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">GIVE YOUR SHARE TO SHOW YOU CARE</span>
                     <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
                 </div>
             </div>
@@ -86,6 +88,7 @@
 </section>
 
 <!--Upcoming Events-->
+{% if events %}
 <section class="upcomming-event-section section-padding">
     <div class="container">
         <div class="row">
@@ -122,7 +125,7 @@
         </div>
     </div>
 </section>
-
+{% endif %}
 <!--Board of trustees-->
 <section class="testimonial-section section-padding">
     <div class="container">
@@ -130,7 +133,7 @@
             <div class="col-md-12">
                 <div class="section-heading text-center">
                     <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">BOARD OF <span class="base-color">TRUSTEES</span></h2>
-                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">GIVE YOUR SHARE TO SHOW YOU CARE</span>
                     <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
                 </div>
             </div>
@@ -140,8 +143,45 @@
                 <div class="fund-testimonial-carousel wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".3s">
                     {% for member in trustees %}
                     <div class="fund-testimonial">
+                        <div class="fund-volunteer text-center wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.2s; animation-name: fadeInUpSmd;">
+                            <div class="fund-volunteer__photo-wrap">
+                                <img src="{{member.profile_picture.url}}" class="img-circle fund-volunteer__photo" alt="volunteer" style="height: 120px;">
+                            </div>
+                            <div class="fund-volunteer__text-content" style="min-height:286px; max-height:286px;display:flex;flex-direction:column;">
+                                <h3 class="fund-volunteer__name">{{member.name}}</h3>
+                                <span class="fund-testimonial__designation">{{member.position}}</span>
+                                <div class="section-heading-separator section-heading-separator--small"></div>
+                                <p style="margin-bottom:auto">{{ member.bios|truncatechars:150 }}</p>
+                                <a href="#" class="btn" style="text-align:center;align-self:center">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Management Staff-->
+<section class="testimonial-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading text-center">
+                    <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">MANAGEMENT <span class="base-color">STAFF</span></h2>
+                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">GIVE YOUR SHARE TO SHOW YOU CARE</span>
+                    <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fund-testimonial-carousel wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".3s">
+                    {% for member in staff %}
+                    <div class="fund-testimonial">
                         <div class="fund-testimonial__quote base-bg">
-                            {{ member.bios }}
+                            {{ member.bios|truncatechars:150 }}
                         </div>
                         <div class="fund-testimonial__author">
                             <div class="fund-testimonial__author-image">
@@ -160,4 +200,5 @@
         </div>
     </div>
 </section>
+
 {% endblock %}

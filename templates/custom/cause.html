@@ -1,0 +1,90 @@
+{% extends './base.html'%}
+{% load static %}
+
+{% block slider %}
+<div class="banner-area banner-area--causes all-text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-title">CAUSES</h1>
+                    <ul class="fund-breadcumb">
+                        <li><a href="/">Home</a> </li>
+                        <li><a href="causes/{{cause.id}}">Causes Details</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section_body %}
+<div class="main-content section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="causes-details-wrap">
+                    <div class="causes-details-top">
+                        <div class="causes-details-image mb10">
+                            <img src="{{cause.image.url}}" alt="" style="border: 1px solid #0003;border-top-right-radius: 8px;border-top-left-radius: 8px;">
+                        </div>
+                        <div class="causes-details-top__text-content">
+                            <h3 class="causes-details__title text-uppercase">{{cause.title}}</h3>
+
+                            <p>{{cause.description}}</p>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+    <aside class="sidebar">
+        <div class="widget">
+            <div class="widget__heading">
+                <h4 class="widget__title">DONATE TO <span class="base-color">CAUSE</span></h4>
+            </div>
+            <div class="widget__text-content">
+                <div class="upcomming-event-carousel" id="upcomming-event-carousel">
+                    <div class="upcomming-event-carousel__item">
+                        <p>NAIRA ACCOUNT DETAILS</p>
+                        <div class="input-group mt15 input-group--border-radius">
+                            <label>Account name</label>
+                            <input type="text" value="AL -AMAL INITIATIVE" placeholder="or enter your own donation amount, e.g: 85" class="form-control input-group__input" style="" disabled/>
+                        </div>
+                        <div class="input-group mt15 input-group--border-radius">
+                            <label>Account Number</label>
+                            <input type="text" value="1020124415" placeholder="or enter your own donation amount, e.g: 85" class="form-control input-group__input" style="" disabled/>
+                        </div>
+                        <div class="input-group mt15 input-group--border-radius">
+                            <label>Bank Name</label>
+                            <input type="text" value="United Bank for Africa (UBA)" placeholder="or enter your own donation amount, e.g: 85" class="form-control input-group__input" style="" disabled/>
+                        </div>
+                    </div>
+                    <!--/.upcomming-event-carousel__item-->
+                    <div class="upcomming-event-carousel__item">
+                        <p>DOMICILIARY ACCOUNT DETAILS</p>
+                        <div class="input-group mt15 input-group--border-radius">
+                            <label>Account name</label>
+                            <input type="text" value="AL -AMAL INITIATIVE" placeholder="or enter your own donation amount, e.g: 85" class="form-control input-group__input" style="" disabled/>
+                        </div>
+                        <div class="input-group mt15 input-group--border-radius">
+                            <label>Account Number</label>
+                            <input type="text" value="3003371746" placeholder="or enter your own donation amount, e.g: 85" class="form-control input-group__input" style="" disabled/>
+                        </div>
+                        <div class="input-group mt15 input-group--border-radius">
+                            <label>Bank Name</label>
+                            <input type="text" value="United Bank for Africa (UBA)" placeholder="or enter your own donation amount, e.g: 85" class="form-control input-group__input" style="" disabled/>
+                        </div>
+                    </div>
+                    <!--/.upcomming-event-carousel__item-->
+                </div>
+            </div>
+        </div>
+
+    </aside>
+</div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
