@@ -1,6 +1,9 @@
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+
 
 # Create your models here.
 class Cause(models.Model):
@@ -45,6 +48,10 @@ class Event(models.Model):
 class ImageUpload(models.Model):
     event = models.ForeignKey(Event, related_name='images')
     image = models.ImageField(null=True, blank=True, upload_to='event-images')
+    thumbnail = ImageSpecField(source='image',
+                                      processors=[ResizeToFill(300, 200)],
+                                      format='JPEG',
+                                      options={'quality': 60})
 
     def __str__(self):
         return self.event.title + '--' + str(self.id)

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'welcome',
     'core',
+    'imagekit'
 ]
 
 MIDDLEWARE = [
