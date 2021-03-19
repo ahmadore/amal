@@ -27,7 +27,7 @@ easy-thumbnails==2.6
 html5lib==1.0.1
 mysqlclient==1.4.2.post1
 pilkit==2.0
-Pillow==6.0.0
+Pillow==8.1.1
 pytz==2019.1
 six==1.12.0
 tzlocal==1.5.1
